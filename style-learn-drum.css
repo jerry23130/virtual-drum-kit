@@ -1,0 +1,104 @@
+/* Learn-Drum page styling*/
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    background: linear-gradient(to bottom, #ffffff 50%, #221901 100%);
+    ; /* White background */
+    color: #000000; /* Black text for visibility */
+    background-repeat: no-repeat;
+    z-index: 1;
+    position: relative;
+  }
+
+.learn-drum {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #ffffff; 
+    padding: 10px;
+    margin: 10px;
+    position: relative;
+  }
+  
+ .learn-drum a {
+    color: #ffbb00;
+    text-decoration: none;
+    font-size: 18px;
+    position: absolute;
+    left: 10px;
+    top: 10px;
+  }
+  
+  .learn-drum h1 {
+    margin: 0;
+  }
+  
+  .video-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 40px;
+    padding: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  
+  .video {
+    background: #fff;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .video:hover{
+    transform: scale(1.05); /* Slightly enlarges the video container */
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); /* Adds a more prominent shadow */
+  }
+
+  .video iframe {
+    width: 100%;
+    height: 200px;
+    transition: transform 0.3s ease;
+  }
+
+  .video:hover iframe {
+    transform: scale(1.02); /* Zooms in on the video slightly */
+  }
+  
+  .video p {
+    margin: 0;
+    padding: 10px;
+    font-size: 16px;
+    text-align: center;
+    background-color: #f4f4f4;
+  }
+  
+  .icon {
+    color: #ffffff;
+    margin-bottom: auto;
+  }
+  
+  .icon:hover {
+    color: #d8ac09; /* Change hover color */
+  }
+
+  /* Footer Styling */
+  .footer {
+    width: 100%;
+    height: 77px;
+    background-color: #221901;
+    color: #ffffff;
+    text-align: center;
+    padding: 40px 0;
+    position: absolute;
+    clear: both;  /*Ensures footer stays at the bottom */
+    z-index: 1;
+  }
+  
+  .footer p {
+    margin-bottom: 15px;
+    font-size: 14px; /* Adjust size as needed */
+  }

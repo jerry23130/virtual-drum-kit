@@ -1,0 +1,283 @@
+/* General Styles */
+
+/* Remove focus and touch highlights */
+*:focus,
+*:active {
+  outline: none;
+  box-shadow: none;
+  -webkit-tap-highlight-color: transparent; /* For touch devices */
+}
+
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  text-align: center;
+  background: linear-gradient(
+    to bottom,
+    #ffffff 50%,
+    #221901 100%
+  ); /* White background */
+  color: #000000; /* Black text for visibility */
+  background-repeat: no-repeat;
+  z-index: 1;
+  position: relative;
+}
+
+h1 {
+  margin: 20px 0;
+  flex: 1;
+  text-align: center;
+}
+
+header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #ffffff;
+  padding: 10px;
+  position: relative;
+}
+
+/* Container for the drum kit and the key shortcuts */
+.container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: flex-start;
+  flex-wrap: wrap; /* Allows wrapping on smaller screens */
+}
+
+/* Drum Kit Container */
+.drum-kit {
+  position: relative; /* Allows positioning of child elements */
+  width: 800px; /* Adjust to match your image's size */
+  height: 615px; /* Adjust to match your image's size */
+  margin: 0 auto;
+  background-image: url("images/drumset_noBG.png"); /* Path to your image */
+  background-size: cover; /* Adjust to fit the container */
+  background-position: center; /* Centers the image */
+  background-repeat: no-repeat;
+
+  /*border: 2px solid black;  Optional: Debugging border */
+}
+
+/* Drum Component Styles */
+.drum {
+  position: absolute; /* Absolute positioning relative to the container */
+  /*background-color: rgba(255, 0, 0, 0.5);  Red for visibility, make transparent later */
+  cursor: pointer;
+  z-index: 1000;
+}
+
+.stick {
+  position: absolute;
+  transform-origin: top center; /* Pivot point for rotation */
+  transition: all 0.2s ease; /* Smooth animations */
+  z-index: 1000; /* Ensure it stays on top */
+  width: 200px; /* Adjust to match image size */
+  height: auto; /* Maintain aspect ratio */
+}
+
+#stick1 {
+  top: 20%;
+  left: 30%;
+}
+#stick2 {
+  top: 20%;
+  left: 70%;
+}
+
+/* Hi-Hat */
+[data-key="d"] {
+  width: 180px; /* Size of the clickable area */
+  height: 60px; /* Size of the clickable area */
+  border-radius: 50%; /* Circular clickable area */
+  top: 19%;
+  left: 4%;
+}
+
+/* Snare Drum */
+[data-key="s"] {
+  top: 31%;
+  left: 24%;
+  width: 190px; /* Size of the clickable area */
+  height: 110px; /* Size of the clickable area */
+  border-radius: 50%; /* Circular clickable area */
+  transform: rotate(10deg);
+}
+
+/* Kick Drum */
+[data-key="a"] {
+  top: 50%;
+  left: 41.5%;
+  width: 220px; /* Size of the clickable area */
+  height: 230px; /* Size of the clickable area */
+  border-radius: 50%; /* Circular clickable area */
+}
+
+/* Tom 1 */
+[data-key="f"] {
+  top: 15%;
+  left: 33%;
+  width: 160px; /* Size of the clickable area */
+  height: 110px; /* Size of the clickable area */
+  border-radius: 50%; /* Circular clickable area */
+  transform: rotate(10deg);
+}
+
+/* Tom 2 */
+[data-key="g"] {
+  top: 32%;
+  left: 63%;
+  width: 200px; /* Size of the clickable area */
+  height: 135px; /* Size of the clickable area */
+  border-radius: 50%; /* Circular clickable area */
+}
+
+/* Crash Cymbal */
+[data-key="h"] {
+  top: -1%;
+  left: 11%;
+  width: 230px; /* Size of the clickable area */
+  height: 120px; /* Size of the clickable area */
+  border-radius: 50%; /* Circular clickable area */
+  transform: rotate(4deg);
+}
+
+/* Ride Cymbal */
+[data-key="j"] {
+  top: 4%;
+  right: 5%;
+  width: 270px; /* Size of the clickable area */
+  height: 140px; /* Size of the clickable area */
+  border-radius: 50%; /* Circular clickable area */
+  transform: rotate(-7deg);
+}
+
+/* Active Drum Effect */
+.drum.active {
+  box-shadow: 0 0 20px 5px rgba(255, 255, 255, 0.7);
+  transition: box-shadow 0.1s ease-in-out;
+}
+
+/* Key Shortcuts Container */
+.key-shortcuts {
+  top: 30%; /* Adjust to align vertically with the drum set */
+  right: 5%; /* Distance from the right edge */
+  width: 200px; /* Adjust the width as needed */
+  background-color: rgba(255, 255, 255, 0.9); /* Slightly transparent white */
+  padding: 10px;
+  margin: 45px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Subtle shadow for a modern look */
+}
+
+/* Key Shortcuts Styling */
+.key-shortcuts h2 {
+  font-size: 1.2em;
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+.key-shortcuts ul {
+  list-style: none;
+  padding: 0;
+}
+
+.key-shortcuts li {
+  margin: 10px 0;
+  font-size: 1em;
+  color: #333;
+}
+
+.key-shortcuts strong {
+  color: #221901; /* Highlight the key name */
+}
+
+.play-button {
+  background: #ffbb00;
+  background-size: 200% 100%; /* Adjust for hover effect */
+  background-position: 0 0;
+  color: #fff;
+  padding: 10px;
+  margin-bottom: 10px;
+  top: 25px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  text-align: center;
+  font-size: 1.1em;
+  right: 45px;
+  position: absolute;
+  width: 150px;
+}
+.play-button:hover {
+  background: #c28f05;
+}
+
+.icon {
+  color: #ffffff;
+  margin-bottom: auto;
+}
+
+.icon:hover {
+  color: #d8ac09; /* Change hover color */
+}
+
+a {
+  text-decoration: none;
+}
+
+/* Footer Styling */
+.footer {
+  width: 100%;
+  height: 77px;
+  background-color: #221901;
+  color: #ffffff;
+  text-align: center;
+  padding: 40px 0;
+  position: absolute;
+  clear: both; /*Ensures footer stays at the bottom */
+  z-index: 1;
+}
+
+.footer p {
+  margin-bottom: 15px;
+  font-size: 14px; /* Adjust size as needed */
+}
+
+/* Rotate Warning for Mobile Portrait Mode */
+.rotate-warning {
+  display: none;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: rgba(0, 0, 0, 0.8);
+  color: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  z-index: 9999;
+}
+
+.rotate-warning p {
+  margin: 0;
+  font-size: 18px;
+}
+
+/* Show warning in portrait mode */
+@media screen and (max-width: 768px) and (orientation: portrait) {
+  .rotate-warning {
+    display: block;
+  }
+  .drum-kit,
+  .key-shortcuts,
+  .footer,
+  .play-button {
+    display: none;
+  }
+  body {
+    background: none;
+  }
+}

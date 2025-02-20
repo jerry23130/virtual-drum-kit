@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Virtual Drum Kit</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="icon" href="images/favicon.ico" type="image/x-icon" />
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <header>
+      <a href="learn-drum.html"
+        ><button class="play-button"><b>Learn Drums</b></button></a
+      >
+      <h1>Virtual Drum Kit</h1>
+    </header>
+    <div class="rotate-warning">
+      <p>Please rotate your device for the best experience.</p>
+    </div>
+    <div class="container">
+      <div class="drum-kit">
+        <img
+          src="images/drumstick.png"
+          alt="DrumStick"
+          class="stick"
+          id="stick1"
+        />
+        <img
+          src="images/drumstick.png"
+          alt="DrumStick"
+          class="stick"
+          id="stick2"
+        />
+        <div
+          class="drum"
+          data-key="h"
+          data-sound="crash"
+          data-top="-1"
+          data-left="11"
+        ></div>
+        <div
+          class="drum"
+          data-key="j"
+          data-sound="ride"
+          data-top="4"
+          data-left="5"
+        ></div>
+        <div
+          class="drum"
+          data-key="d"
+          data-sound="hihat"
+          data-top="19"
+          data-left="4"
+        ></div>
+        <div
+          class="drum"
+          data-key="f"
+          data-sound="tom1"
+          data-top="15"
+          data-left="33"
+        ></div>
+
+        <div
+          class="drum"
+          data-key="s"
+          data-sound="snare"
+          data-top="31"
+          data-left="24"
+        ></div>
+        <div
+          class="drum"
+          data-key="a"
+          data-sound="kick"
+          data-top="50"
+          data-left="41.5"
+        ></div>
+        <div
+          class="drum"
+          data-key="g"
+          data-sound="tom2"
+          data-top="32"
+          data-left="63"
+        ></div>
+      </div>
+
+      <aside class="key-shortcuts">
+        <h2>Key Shortcuts</h2>
+        <ul>
+          <li id="l1"><strong>D</strong>: Hi-Hat</li>
+          <li id="l2"><strong>S</strong>: Snare</li>
+          <li id="l3"><strong>A</strong>: Kick Drum</li>
+          <li id="l4"><strong>F</strong>: Tom 1</li>
+          <li id="l5"><strong>G</strong>: Tom 2</li>
+          <li id="l6"><strong>H</strong>: Crash Cymbal</li>
+          <li id="l7"><strong>J</strong>: Ride Cymbal</li>
+        </ul>
+      </aside>
+    </div>
+
+    <footer class="footer">
+      <p>2025 © All Rights Reserved.</p>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>
